@@ -1,5 +1,4 @@
 import * as THREE from 'three';
-import { randFloat } from 'three/src/math/MathUtils';
 
 const scene = new THREE.Scene();
 
