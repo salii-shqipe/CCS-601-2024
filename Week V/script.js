@@ -13,10 +13,20 @@ for (let i = 0; i < count * 3 * 3; i++) {
 const positionsAttribute = new THREE.BufferAttribute(positionsArray, 3);
 geometry.setAttribute('position', positionsAttribute);
 
-const material = new THREE.MeshBasicMaterial({ color: 0xff0000, wireframe: true });
+const material = new THREE.MeshStandardMaterial({
+    color: 0xff0000,          
+    roughness: 0.5,
+    wireframe: true            
+});
 const mesh = new THREE.Mesh(geometry, material);
 scene.add(mesh);
 
+
+const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+scene.add(directionalLight);
+
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
+scene.add(ambientLight);
 
 const sizes = {
     width: window.innerWidth,
